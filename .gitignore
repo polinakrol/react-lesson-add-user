@@ -1,0 +1,9 @@
+.next
+node_modules
+out
+coverage
+.nyc_output
+.vscode
+cypress/fixtures/data.local.json
+package-lock.json
+yarn.lock
