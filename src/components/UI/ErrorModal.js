@@ -13,7 +13,12 @@ const ModalOverlay = (props) => {
   return (
     <Card className={classes.modal}>
       <header className={classes.header}>
-        <h2>{props.title}</h2>
+        <h2>
+          {props.title}
+          <Button onClick={props.onConfirm} style="float: right; display: inline-block;">
+            X
+          </Button>
+        </h2>
       </header>
       <div className={classes.content}>
         <p>{props.message}</p>
@@ -33,7 +38,11 @@ const ErrorModal = (props) => {
         document.getElementById("backdrop-root")
       )}
       {ReactDOM.createPortal(
-        <BacModalOverlaydrop onConfirm={props.onConfirm} title={props.title} message={props.message} />,
+        <ModalOverlay
+          onConfirm={props.onConfirm}
+          title={props.title}
+          message={props.message}
+        />,
         document.getElementById("overlay-root")
       )}
     </React.Fragment>
